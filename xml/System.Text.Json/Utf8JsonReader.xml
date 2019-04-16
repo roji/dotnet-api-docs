@@ -60,7 +60,8 @@ To be able to set max depth while reading OR allow skipping comments, create an 
       </Parameters>
       <Docs>
         <param name="jsonData">The UTF-8 encoded JSON text to process.</param>
-        <param name="isFinalBlock"><see langword="true" /> when the input sequence contains the entire data to process. <see langword="false" /> only if it's known that the input span contains partial data with more data to follow.</param>
+        <param name="isFinalBlock">
+          <see langword="true" /> when the input sequence contains the entire data to process. <see langword="false" /> only if it's known that the input span contains partial data with more data to follow.</param>
         <param name="state">If this is the first call to the constructor, pass in a default state. Otherwise, capture the state from the previous instance of the <see cref="T:System.Text.Json.Utf8JsonReader" /> and pass that back.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Text.Json.Utf8JsonReader" /> class.</summary>
         <remarks>
@@ -94,7 +95,8 @@ This is the reason why the constructor accepts a <xref:System.Text.Json.JsonRead
       </Parameters>
       <Docs>
         <param name="jsonData">The UTF-8 encoded JSON text to process.</param>
-        <param name="isFinalBlock"><see langword="true" /> when the input span contains the entire data to process. <see langword="false" /> only if it's known that the input span contains partial data with more data to follow.</param>
+        <param name="isFinalBlock">
+          <see langword="true" /> when the input span contains the entire data to process. <see langword="false" /> only if it's known that the input span contains partial data with more data to follow.</param>
         <param name="state">A struct that contains the reader state. On the first call to the constructor, it should reflect a default state; otherwise, it should capture the state from the previous instance instance of the <see cref="T:System.Text.Json.Utf8JsonReader" /> and pass that back.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Text.Json.Utf8JsonReader" /> class.</summary>
         <remarks>
@@ -207,7 +209,8 @@ in more data asynchronously before continuing with a new instance of the <xref:S
       <Parameters />
       <Docs>
         <summary>Reads the next JSON token value from the source as a <see cref="T:System.Boolean" />.</summary>
-        <returns><see langword="true" /> if the <see cref="P:System.Text.Json.Utf8JsonReader.TokenType" /> is <see cref="F:System.Text.Json.JsonTokenType.True" />; <see langword="false" /> if the <see cref="P:System.Text.Json.Utf8JsonReader.TokenType" /> is <see cref="F:System.Text.Json.JsonTokenType.False" />.</returns>
+        <returns>
+          <see langword="true" /> if the <see cref="P:System.Text.Json.Utf8JsonReader.TokenType" /> is <see cref="F:System.Text.Json.JsonTokenType.True" />; <see langword="false" /> if the <see cref="P:System.Text.Json.Utf8JsonReader.TokenType" /> is <see cref="F:System.Text.Json.JsonTokenType.False" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
             The value of the JSON token is not a boolean value (that is, <see cref="F:System.Text.Json.JsonTokenType.True" /> or <see cref="F:System.Text.Json.JsonTokenType.False" />).</exception>
@@ -419,10 +422,6 @@ The `GetSingle` method throws an exception if the entire UTF-8 encoded token val
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
           The JSON token value isn't a string (that is, not a <see cref="F:System.Text.Json.JsonTokenType.String" /> or <see cref="F:System.Text.Json.JsonTokenType.PropertyName" />).</exception>
-
--or-
-
-The JSON string contains invalid UTF-8 bytes or invalid UTF-16 surrogates.
         <altmember cref="P:System.Text.Json.Utf8JsonReader.TokenType" />
       </Docs>
     </Member>
@@ -515,7 +514,8 @@ The JSON token value represents a number less than <see cref="F:System.UInt64.Mi
       </ReturnValue>
       <Docs>
         <summary>Gets a value that indicates which <c>Value</c> property to use to get the token value.</summary>
-        <value><see langword="true" /> if <see cref="P:System.Text.Json.Utf8JsonReader.ValueSequence" /> should be used to get the token value. <see langword="false" /> if <see cref="P:System.Text.Json.Utf8JsonReader.ValueSpan" /> should be used instead.</value>
+        <value>
+          <see langword="true" /> if <see cref="P:System.Text.Json.Utf8JsonReader.ValueSequence" /> should be used to get the token value. <see langword="false" /> if <see cref="P:System.Text.Json.Utf8JsonReader.ValueSpan" /> should be used instead.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
 
@@ -568,7 +568,8 @@ For input data within a `ReadOnlySpan<byte>`, this always returns `false`. For i
       <Parameters />
       <Docs>
         <summary>Read the next JSON token from the input source.</summary>
-        <returns><see langword="true" /> if the token was read successfully; otherwise, <see langword="false" />.</returns>
+        <returns>
+          <see langword="true" /> if the token was read successfully; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.Text.Json.JsonReaderException">
             An invalid JSON token is encountered.
@@ -621,7 +622,8 @@ The current depth exceeds the recursive limit set by the maximum depth.
       <Docs>
         <param name="value">When this method returns, contains the parsed value.</param>
         <summary>Reads the next JSON token value from the source and parses it to a <see cref="T:System.Decimal" />.</summary>
-        <returns><see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to a <see cref="T:System.Decimal" /> value; otherwise, <see langword="false" />.</returns>
+        <returns>
+          <see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to a <see cref="T:System.Decimal" /> value; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
             The JSON token value isn't a <see cref="F:System.Text.Json.JsonTokenType.Number" />.</exception>
@@ -649,7 +651,8 @@ The current depth exceeds the recursive limit set by the maximum depth.
       <Docs>
         <param name="value">When this method returns, contains the parsed value.</param>
         <summary>Reads the next JSON token value from the source and parses it to a <see cref="T:System.Double" />.</summary>
-        <returns><see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to a <see cref="T:System.Double" /> value; otherwise, <see langword="false" />.</returns>
+        <returns>
+          <see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to a <see cref="T:System.Double" /> value; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
             The JSON token value isn't a <see cref="F:System.Text.Json.JsonTokenType.Number" />.</exception>
@@ -677,7 +680,8 @@ The current depth exceeds the recursive limit set by the maximum depth.
       <Docs>
         <param name="value">When this method returns, contains the parsed value.</param>
         <summary>Reads the next JSON token value from the source and parses it to an <see cref="T:System.Int32" />.</summary>
-        <returns><see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to an <see cref="T:System.Int32" /> value; otherwise, <see langword="false" />.</returns>
+        <returns>
+          <see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to an <see cref="T:System.Int32" /> value; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
             The JSON token value isn't a <see cref="F:System.Text.Json.JsonTokenType.Number" />.</exception>
@@ -705,7 +709,8 @@ The current depth exceeds the recursive limit set by the maximum depth.
       <Docs>
         <param name="value">When this method returns, contains the parsed value.</param>
         <summary>Reads the next JSON token value from the source and parses it to an <see cref="T:System.Int64" />.</summary>
-        <returns><see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to an <see cref="T:System.Int64" /> value; otherwise, <see langword="false" />.</returns>
+        <returns>
+          <see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to an <see cref="T:System.Int64" /> value; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
             The JSON token value isn't a <see cref="F:System.Text.Json.JsonTokenType.Number" />.</exception>
@@ -733,7 +738,8 @@ The current depth exceeds the recursive limit set by the maximum depth.
       <Docs>
         <param name="value">When this method returns, contains the parsed value.</param>
         <summary>Reads the next JSON token value from the source and parses it to a <see cref="T:System.Single" />.</summary>
-        <returns><see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to an <see cref="T:System.Single" /> value; otherwise, <see langword="false" />.</returns>
+        <returns>
+          <see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to an <see cref="T:System.Single" /> value; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
             The JSON token value isn't a <see cref="F:System.Text.Json.JsonTokenType.Number" />.</exception>
@@ -766,7 +772,8 @@ The current depth exceeds the recursive limit set by the maximum depth.
       <Docs>
         <param name="value">When this method returns, contains the parsed value.</param>
         <summary>Reads the next JSON token value from the source and parses it to a <see cref="T:System.UInt32" />.</summary>
-        <returns><see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to a <see cref="T:System.UInt32" /> value; otherwise, <see langword="false" />.</returns>
+        <returns>
+          <see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to a <see cref="T:System.UInt32" /> value; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
             The JSON token value isn't a <see cref="F:System.Text.Json.JsonTokenType.Number" />.</exception>
@@ -799,7 +806,8 @@ The current depth exceeds the recursive limit set by the maximum depth.
       <Docs>
         <param name="value">When this method returns, contains the parsed value.</param>
         <summary>Reads the next JSON token value from the source and parses it to a <see cref="T:System.UInt64" />.</summary>
-        <returns><see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to a <see cref="T:System.UInt64" /> value; otherwise, <see langword="false" />.</returns>
+        <returns>
+          <see langword="true" /> if the entire UTF-8 encoded token value can be successfully parsed to a <see cref="T:System.UInt64" /> value; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
             The JSON token value isn't a <see cref="F:System.Text.Json.JsonTokenType.Number" />.</exception>
@@ -837,7 +845,7 @@ Therefore, only access `ValueSequence` if <xref:System.Text.Json.Utf8JsonReader.
 Otherwise, the token value must be accessed from <xref:System.Text.Json.Utf8JsonReader.ValueSpan>.
 
  ]]></format>
-            </remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ValueSpan">
